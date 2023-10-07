@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Event Planning and Coordination",
+        "image": "https://i.postimg.cc/hGWXshzD/event-planning.jpg",
+        "price": "$2,500 - $10,000",
+        "short_description": "Comprehensive event planning and seamless coordination to ensure your corporate event runs smoothly."
+    },
+    {
+        "id": 2,
+        "name": "Venue Selection and Management",
+        "image": "https://i.postimg.cc/D0XVxfbh/venue.jpg",
+        "price": "Custom Quote",
+        "short_description": "Expert assistance in finding the perfect venue and managing all logistical aspects for your event."
+    },
+    {
+        "id": 3,
+        "name": "Creative Design and Branding",
+        "image": "https://i.postimg.cc/FFLsWhv1/branding-advertisment-copyright-value-profile-concept.jpg",
+        "price": "$1,500 - $5,000",
+        "short_description": "Innovative design and branding services to make your event visually captivating and memorable."
+    },
+    {
+        "id": 4,
+        "name": "Entertainment and Speaker Booking",
+        "image": "https://i.postimg.cc/VkDYr6qZ/male-business-executive-giving-speech.jpg",
+        "price": "$1,000 - $8,000",
+        "short_description": "Expertise in booking top-notch entertainment and speakers to engage and inspire your audience."
+    },
+    {
+        "id": 5,
+        "name": "Logistics and Production Management",
+        "image": "https://i.postimg.cc/D0kFkbh0/businessman-showing-changes-report.jpg",
+        "price": "$1,200 - $6,500",
+        "short_description": "Efficient logistical planning and meticulous production management for a flawless event experience."
+    },
+    {
+        "id": 6,
+        "name": "Budgeting and Financial Consultation",
+        "image": "https://i.postimg.cc/7ZY4kkF3/workplace-results-professional-report-accounting-during.jpg",
+        "price": "$800 - $3,500",
+        "short_description": "Strategic budgeting and financial consultation to ensure cost-effective event planning."
+    }
+]
