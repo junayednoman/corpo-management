@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    overflow-x: hidden !important;
+}
 .banner{
     background-image: url(../src/assets/female-business-executive-giving-speech.jpg);
     background-position: center;
@@ -14,8 +17,8 @@
 }
 
 .navbar .active{
-    background-color: #A5D7E8 !important;
-    color: black !important;
+    background-color: transparent !important;
+    color: #A5D7E8 !important;
 }
 
 .navbar a:hover{
