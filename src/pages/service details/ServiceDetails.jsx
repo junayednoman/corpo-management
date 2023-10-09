@@ -21,7 +21,7 @@ const ServiceDetails = () => {
             </div>
 
             <div className="lg:w-2/3 w-full lg:px-0 md:px-9 px-3 lg:mx-auto md:mt-0 mt-3 mb-14">
-                <div className="w-full md:h-[400px] h-[200px] lg:h-[500px]" style={{backgroundImage: `url(${image})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+                <div className="w-full md:h-[400px] h-[200px] lg:h-[500px]" style={{ backgroundImage: `url(${image})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
                 </div>
                 <h3 className="text-2xl md:text-5xl font-semibold mb-4 text-[#0B2447] mt-10">{name}</h3>

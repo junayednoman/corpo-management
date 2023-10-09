@@ -4,15 +4,24 @@ import RegisterForm from "../../others sections/register form/RegisterForm";
 import Service from "../../others sections/services/Service";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import Footer from "../../others sections/footer/Footer";
 import CounterSection from "../../additional sections/counter section/CounterSection";
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 
 const Home = () => {
-
+    const onBeforeSlide = (detail) => {
+        const { index, prevIndex } = detail;
+        console.log(index, prevIndex);
+    };
 
     const services = useLoaderData();
     const styles = {
@@ -55,7 +64,7 @@ const Home = () => {
                         grabCursor={true}
                         modules={[EffectCards]}
                         className="mySwiper"
-                        // spaceBetween={20}
+                    // spaceBetween={20}
                     >
 
                         {services.map(service => <SwiperSlide className="bg-[#A5D7E8] p-3 md:p-5 rounded-md lg:w-full w-1/4" key={service.id}>
@@ -69,6 +78,9 @@ const Home = () => {
                                         </>
 
                                 }
+                                <div>
+                                    <p className='mt-2'><span className='font-medium'>Price</span>: {service.price}</p>
+                                </div>
                                 <Link to={`/service/${service.id}`} className='btn text-[12px] bg-[#0B2447] border-none mt-4 text-white hover:bg-[#0B2447]'>View Details</Link>
                             </div>
                         </SwiperSlide>)}
@@ -86,6 +98,37 @@ const Home = () => {
                 </div>
 
                 {/* {services.map(service => <Service key={service.id} service={service}></Service>)} */}
+            </div>
+
+            <div className="py-8 md:py-24 bg-[#a5d7e81e]">
+                <div className="max-w-6xl xl:mx-auto mx-3 md:mx-9">
+                    <h2 className="text-2xl md:text-5xl font-semibold text-[#0B2447] text-center mb-5 md:mb-12">Photo Gallery</h2>
+                    <LightGallery
+                        elementClassNames="custom-wrapper-class grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-5"
+                        onBeforeSlide={onBeforeSlide}
+                        plugins={[lgThumbnail, lgZoom]}
+                    // speed={500}
+                    >
+                        <a href="https://i.postimg.cc/SK57xhD2/business-executives-participating-business-meeting.jpg">
+                            <img alt="img1" src="https://i.postimg.cc/SK57xhD2/business-executives-participating-business-meeting.jpg" />
+                        </a>
+                        <a href="https://i.postimg.cc/D0XVxfbh/venue.jpg">
+                            <img alt="img1" src="https://i.postimg.cc/D0XVxfbh/venue.jpg" />
+                        </a>
+                        <a href="https://i.postimg.cc/FFLsWhv1/branding-advertisment-copyright-value-profile-concept.jpg">
+                            <img alt="img1" src="https://i.postimg.cc/FFLsWhv1/branding-advertisment-copyright-value-profile-concept.jpg" />
+                        </a>
+                        <a href="https://i.postimg.cc/VkDYr6qZ/male-business-executive-giving-speech.jpg">
+                            <img alt="img1" src="https://i.postimg.cc/VkDYr6qZ/male-business-executive-giving-speech.jpg" />
+                        </a>
+                        <a href="https://i.postimg.cc/D0kFkbh0/businessman-showing-changes-report.jpg">
+                            <img alt="img1" src="https://i.postimg.cc/D0kFkbh0/businessman-showing-changes-report.jpg" />
+                        </a>
+                        <a href="https://i.postimg.cc/7ZY4kkF3/workplace-results-professional-report-accounting-during.jpg">
+                            <img alt="img1" src="https://i.postimg.cc/7ZY4kkF3/workplace-results-professional-report-accounting-during.jpg" />
+                        </a>
+                    </LightGallery>
+                </div>
             </div>
 
             <Footer></Footer>
