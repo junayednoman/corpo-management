@@ -19,6 +19,9 @@ body{
 .navbar .active{
     background-color: transparent !important;
     color: #A5D7E8 !important;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #A5D7E8;
+    border-radius: 0;
 }
 
 .navbar a:hover{

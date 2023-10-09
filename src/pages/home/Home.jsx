@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../../others sections/navbar/Navbar";
 import RegisterForm from "../../others sections/register form/RegisterForm";
 import Service from "../../others sections/services/Service";
@@ -7,16 +7,17 @@ import { EffectCards } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import Footer from "../../others sections/footer/Footer";
+import CounterSection from "../../additional sections/counter section/CounterSection";
 
 
 const Home = () => {
 
 
     const services = useLoaderData();
-    console.log(services);
     const styles = {
         bgColor: 'bg-transparent',
-        textColor: 'text-white',
+        textColor: 'text-white'
     };
     return (
         <div>
@@ -38,6 +39,12 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* banner end */}
+
+
+            <div>
+                <CounterSection></CounterSection>
+            </div>
 
 
 
@@ -49,8 +56,6 @@ const Home = () => {
                         modules={[EffectCards]}
                         className="mySwiper"
                         // spaceBetween={20}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
                     >
 
                         {services.map(service => <SwiperSlide className="bg-[#A5D7E8] p-3 md:p-5 rounded-md lg:w-full w-1/4" key={service.id}>
@@ -61,13 +66,10 @@ const Home = () => {
                                     service.short_description.length <= 200 ? <p className="md:text-base text-sm">{service.short_description.slice(0, 200)}</p> :
                                         <>
                                             <p className="md:text-base text-sm">{service.short_description.split('.')[0]}.</p>
-                                            {/* {
-                                                service.short_description.lastIndexOf('.', 199) === -1 ? <p>{service.short_description.slice(0, 200)}</p> : <p>{service.short_description.slice(0, service.short_description.lastIndexOf('.', 199) + 1)}</p>
-                                            } */}
                                         </>
 
                                 }
-                                <button className="btn mt-5 md:text-sm text-[12px] bg-[#0B2447] hover:bg-[#0B2447] text-white border-none">View Details</button>
+                                <Link to={`/service/${service.id}`} className='btn text-[12px] bg-[#0B2447] border-none mt-4 text-white hover:bg-[#0B2447]'>View Details</Link>
                             </div>
                         </SwiperSlide>)}
                     </Swiper>
@@ -80,11 +82,13 @@ const Home = () => {
                 </div>
 
                 <div className="block md:hidden mx-3 mt-8">
-                    {services.map(service => <Service key={service.id} service={service}></Service>)}
+                    {services?.map(service => <Service key={service.id} service={service}></Service>)}
                 </div>
 
                 {/* {services.map(service => <Service key={service.id} service={service}></Service>)} */}
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };

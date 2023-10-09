@@ -3,6 +3,7 @@ import Root from "./root/Root";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import ServiceDetails from "../pages/service details/ServiceDetails";
 
 const router = createBrowserRouter([
     {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: ()=>fetch('service.json')
+                loader: () => fetch('/service.json')
             },
             {
                 path: '/login',
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/service/:id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: () => fetch('/service.json')
             }
         ]
     }
