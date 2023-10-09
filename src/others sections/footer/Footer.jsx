@@ -1,14 +1,15 @@
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer text-white footer-center p-10 bg-[#0B2447] rounded">
                 <nav className="grid grid-flow-col gap-4">
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link className="link link-hover" to='/'>Home</Link>
+                    <Link className="link link-hover" to='/profile'>Profile</Link>
+                    <Link className="link link-hover" to='/register'>Register</Link>
+                    <Link className="link link-hover" to='/login'>Login</Link>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
